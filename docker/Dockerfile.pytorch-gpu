@@ -1,0 +1,44 @@
+# Start with the base Ubuntu image
+FROM ubuntu:20.04
+
+# Avoid prompts from apt during package installation
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Install necessary packages for building software and managing dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    wget \
+    build-essential \
+    software-properties-common \
+    gnupg2 \
+    curl \
+    lsb-release \
+    python3-pip \
+    python3-dev && \
+    rm -rf /var/lib/apt/lists/*
+
+# Install NVIDIA CUDA Toolkit and cuDNN
+RUN wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-ubuntu2004.pin && \
+    mv cuda-ubuntu2004.pin /etc/apt/preferences.d/cuda-repository-pin-600 && \
+    wget http://developer.download.nvidia.com/compute/cuda/11.3.1/local_installers/cuda-repo-ubuntu2004-11-3-local_11.3.1-465.19.01-1_amd64.deb && \
+    dpkg -i cuda-repo-ubuntu2004-11-3-local_11.3.1-465.19.01-1_amd64.deb && \
+    apt-key add /var/cuda-repo-ubuntu2004-11-3-local/7fa2af80.pub && \
+    apt-get update && \
+    apt-get -y install cuda
+
+# Environment Variables for CUDA
+ENV PATH=/usr/local/cuda-11.3/bin:${PATH}
+ENV LD_LIBRARY_PATH=/usr/local/cuda-11.3/lib64:${LD_LIBRARY_PATH}
+
+# Upgrade pip and install Python dependencies for PyTorch
+RUN python3 -m pip install --upgrade pip && \
+    pip3 install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu113
+
+# Set the working directory
+WORKDIR /app
+
+# Copy application files
+COPY . /app
+
+# Make port 80 available outside this container
+EXPOSE 80
+

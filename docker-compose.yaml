@@ -1,0 +1,24 @@
+version: '3.10'
+services: 
+  pytorch-gpu:
+    build:
+      context: ./docker
+      dockerfile: Dockerfile.pytorch-gpu
+    ports:
+      - "5001:5000"
+    environment:
+      - USE_CUDA=1
+    volumes:
+      - data_volume:/app/data
+  pytorch-cpu:
+    build:
+      context: ./docker
+      dockerfile: Dockerfile.pytorch-cpu
+    ports:
+      - "5001:5000"
+    environment:
+      - USE_CUDA=0
+    volumes:
+      - data_volume:/app/data
+volumes:
+  data_volume:
