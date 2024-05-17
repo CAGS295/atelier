@@ -1,0 +1,21 @@
+
+# Linux:Fedora base image 
+FROM --platform=linux/arm64 fedora:39
+
+# Install variation: Fedora Asahi Remix
+
+# RUN sudo curl https://alx.sh | sh
+# COPY docker/mps/asahi_install_docker.sh .
+# RUN dnf install git -y
+# RUN dnf install wget -y
+# RUN dnf install jq -y
+# RUN dnf install make -y
+
+# RUN git clone https://github.com/AsahiLinux/asahi-installer.git
+
+# Install M1/M2 drivers for Macbook Pro
+
+# Install pytorch with MPS version
+
+# Test with dummy LLM project 
+

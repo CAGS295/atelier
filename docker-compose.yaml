@@ -1,12 +1,12 @@
 version: '3.10'
 services:
-  debian-mps:
+  fedora-mps:
+    platform: linux/arm64
     build:
       context: .
-      dockerfile: docker/Dockerfile.debian-mps
-    environment:
-      - USE_CUDA=0
+      dockerfile: docker/mps/Dockerfile.fedora-mps
     ports:
-      - "8080:80"
+      - "8081:80"
+    tty: true
 volumes:
   data_volume:
