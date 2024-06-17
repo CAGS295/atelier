@@ -1,20 +1,17 @@
 # atelier
 
 
-## Ubuntu with Rust, Torch MPS-GPU
-
-Goals are:
+## Ubuntu with Torch and MPS-GPU
 
 - Lower Vulverabilities
 - Lower Compressed size
 - Lower Software Footprint
 - High Stability
 
-Purpose driven:
- 
-- Exploration: Common dev tools, infrastructure agnostic, unoptimized
-- Development: Targeted or Flexible Infrastructure, Performant Dev Tools
-- Production: Minimalistic dev tools, high infrastructure-driven optimization
+- optional: 
+    - Exploration: Common dev tools, infrastructure agnostic, unoptimized
+    - Development: Targeted or Flexible Infrastructure, Performant Dev Tools
+    - Production: Minimalistic dev tools, high infrastructure-driven optimization
 
 ## Target: Development
 
@@ -22,9 +19,6 @@ Purpose driven:
 - gpu: MPS | CUDA
 - python: 3.11
 
-### docker
-
-more on [compose specifications](https://github.com/compose-spec/compose-spec)
 
 ### Rust
 
@@ -57,6 +51,7 @@ to work optimally in specific hosts architectures and operative systems.
 ```shell
 rustc src/main.rs --target=<target-specification-here>
 ```
+
 Check for more details in the official doc for [Command-line arguments]("https://doc.rust-lang.org/nightly/rustc/command-line-arguments.html")
 
 ### `rustc` compiler Tiered support
@@ -81,10 +76,12 @@ Here at the [rustup-components](https://rust-lang.github.io/rustup-components-hi
 
 Now, [cross-compilation]("https://rust-lang.github.io/rustup/cross-compilation.html#cross-compilation") can utilized for the cases where the Target host is different than the Comipiling host. e.g. you are using your macOS machine to build a project meant to be running on a Ubuntu Server with ARM64 (AWS: Graviton lambdas)
 
-## rustc online installation (interactive)
+
+
+## rustc online installation
 
 ```
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s --target
 ```
 
 for offline installation strictly in macOS.
