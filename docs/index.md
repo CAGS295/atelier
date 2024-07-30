@@ -1,6 +1,10 @@
+---
+hide:
+  - navigation
+---
 
 <div style="text-align: center">
-  <h1><strong>atelier</strong> A containerized, rust-based and python-wrapped framework for High Performant ML Training </h1>
+  <h1> A containerized, rust-based and python-wrapped framework for High Performant ML Training </h1>
 </div>
 
 A Machine Learning Infrastructure Builder for training, fine-tuning, serving and monitoring Financial Machine Learning Models for High Frequency Trading in Crypto Markets.
