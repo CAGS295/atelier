@@ -1,14 +1,11 @@
 site_name: Atelier
 site_description: An Experimental, Rust-based, Python-wrapped, Workshop for ML 
-site_url: https://www.iteralabs.ai
 repo_name: iteralabs/atelier
-repo_url: https://github.com/iteralabs/atelier
-edit_uri: edit/main/docs/
-copyright: Copyright iteralabs
+repo_url: https://github.com/iteralabs/atelier/docs
 
 nav: 
   - Welcome: index.md
 
 theme:
-  name: material
+  name: terminal
 
