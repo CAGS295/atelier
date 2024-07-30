@@ -3,7 +3,7 @@ site_description: An Experimental, Rust-based, Python-wrapped, Workshop for ML
 site_url: https://www.iteralabs.ai
 repo_name: iteralabs/atelier
 repo_url: https://github.com/iteralabs/atelier
-edit_url: edit/main/docs/
+edit_uri: edit/main/docs/
 copyright: Copyright iteralabs
 
 nav: 
