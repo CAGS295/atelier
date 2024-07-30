@@ -12,7 +12,7 @@ nav:
   - Changelog: changelog.md
 
 theme:
-  name: terminal
+  name: material
   features:
   - navigation.instant
   - navigation.tracking

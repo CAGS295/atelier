@@ -16,7 +16,3 @@ A Machine Learning Infrastructure Builder for training, fine-tuning, serving and
   <a class="github-button" href="https://github.com/sponsors/iffranciscome" data-size="large" data-icon="octicon-heart" data-color-scheme="light" aria-label="Sponsor @iffranciscome on GitHub">Sponsor</a>
 </p>
 
-!!! abstract "Installation Instructions"
-
-    For the next steps or ways to customize the installation, head over to the detailed
-    installation guide.
