@@ -29,7 +29,33 @@ theme:
 
 markdown_extensions:
   - attr_list
+  - admonition
+  - def_list
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+    alternate_style: true
+  - mdx_gh_links:
+    user: iteralabs
+    repo: atelier
+  - pymdownx.emoji:
+    emoji_index: !!python/name:materialx.emoji.twemoji
+    emoji_generator: !!python/name:materialx.emoji.to_svg
 
 plugins:
   - search
+  - mkdocs-simple-hooks:
+      hooks:
+        on_post_build: "docs.hooks:copy_get"
+  - mkdocs-version-annotations:
+      version_added_title: 'new in **\1**'
+      version_changed_title: 'changed in **\1**'
+      version_removed_title: 'removed in **\1**'
+  - include-markdown:
+      preserve_includer_indent: true
 
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/iteralabs
+      name: Follow @iteralabs on GitHub
