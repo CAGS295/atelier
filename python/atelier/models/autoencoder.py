@@ -4,7 +4,6 @@ import torch.optim as optim
 from torch.nn import functional as F
 import numpy as np
 
-# Set seed for reproducibility
 seed = 42
 np.random.seed(seed)
 torch.manual_seed(seed)
@@ -15,9 +14,20 @@ dtype = torch.float16
 n_past = 30
 n_dims = 51
 n_future = 10
+
+# Hiper-parameters
 encoder_units_1 = 200
 decoder_units_1 = 200
 dropout_value = 0.4
+optimizer = "adam"
+batch_size = 64
+n_epochs = 150
+learning_rate = 0.0001
+cost_function = "MAE"
+
+# Extras
+batch_normalization = True
+early_stopping = "MAE should improve every 30 epochs"
 
 class Encoder(nn.Module):
     
