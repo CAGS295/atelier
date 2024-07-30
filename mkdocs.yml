@@ -32,14 +32,9 @@ markdown_extensions:
   - def_list
   - pymdownx.details
   - pymdownx.superfences
-  - pymdownx.tabbed:
-      alternate_style: true
 
 plugins:
   - search
-  - mkdocs-simple-hooks:
-      hooks:
-        on_post_build: "docs.hooks:copy_get"
 
 extra:
   social:
