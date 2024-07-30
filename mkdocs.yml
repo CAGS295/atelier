@@ -31,16 +31,11 @@ markdown_extensions:
   - attr_list
   - admonition
   - def_list
+  - markdown_version_annotations
   - pymdownx.details
   - pymdownx.superfences
   - pymdownx.tabbed:
-    alternate_style: true
-  - mdx_gh_links:
-    user: iteralabs
-    repo: atelier
-  - pymdownx.emoji:
-    emoji_index: !!python/name:materialx.emoji.twemoji
-    emoji_generator: !!python/name:materialx.emoji.to_svg
+      alternate_style: true
 
 plugins:
   - search
