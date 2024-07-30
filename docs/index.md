@@ -1,20 +1,9 @@
----
-hide:
-  - navigation
----
 
 <div style="text-align: center">
   <h1><strong>atelier</strong> A containerized, rust-based and python-wrapped framework for High Performant ML Training </h1>
 </div>
 
-Rye is a comprehensive project and package management solution for Python.
-Born from [its creator's](https://github.com/mitsuhiko) desire to establish a
-one-stop-shop for all Python users, Rye provides a unified experience to install and manages Python
-installations, `pyproject.toml` based projects, dependencies and virtualenvs
-seamlessly.  It's designed to accommodate complex projects, monorepos and to
-facilitate global tool installations.  Curious? [Watch an introduction](https://youtu.be/q99TYA7LnuA).
-
-A hassle-free experience for Python developers at every level.
+A Machine Learning Infrastructure Builder for training, fine-tuning, serving and monitoring Financial Machine Learning Models for High Frequency Trading in Crypto Markets.
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <p align="center">
@@ -24,8 +13,6 @@ A hassle-free experience for Python developers at every level.
 </p>
 
 !!! abstract "Installation Instructions"
-
-    {% include-markdown ".includes/quick-install.md" %}
 
     For the next steps or ways to customize the installation, head over to the detailed
     installation guide.
