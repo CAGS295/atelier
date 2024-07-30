@@ -1,5 +1,19 @@
-debug/
-target/
-
+# -- Rust -- #
+/debug
+/target
 Cargo.lock
+.python-version
+pyrightconfig.json
+
+# -- python -- #
+
+# package builds
+*.whl
+build/
+dist/
+.eggs/
+python/lucien.egg-info
+*.so
 .DS_Store
+__pycache__
+
