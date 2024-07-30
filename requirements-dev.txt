@@ -1,3 +1,7 @@
 # -- placeholder
 
 numpy
+attrs
+torch
+torchmetrics
+
