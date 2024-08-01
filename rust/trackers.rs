@@ -14,6 +14,6 @@ struct Parameter {
 #[derive(Debug)]
 struct Experiment {
     id: u32,
-    name: String,
     hyper_params: Vec<T>,
 }
+

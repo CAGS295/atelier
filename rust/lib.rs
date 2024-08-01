@@ -1,4 +1,5 @@
 // lib.rs : Final script where to place wrapped functionality
+crate::atelier::trackers::parameter
 
 use pyo3::prelude::*;
 
