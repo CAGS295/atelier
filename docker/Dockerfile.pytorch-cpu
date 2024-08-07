@@ -18,7 +18,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 # Upgrade pip and install Python dependencies for PyTorch
 RUN python3 -m pip install --upgrade pip && \
-    pip3 install torch torchvision torchaudio
+    pip3 install torch
 
 # Set the working directory
 WORKDIR /app

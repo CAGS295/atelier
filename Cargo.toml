@@ -1,6 +1,6 @@
 [package]
 name = "atelier"
-version = "0.0.2"
+version = "0.0.3"
 edition = "2021"
 description = "A cognitive workshop for synthetic artificial intelligence"
 authors = ["IteraLabs.ai <contact@iteralabs.ai>"]
@@ -9,11 +9,15 @@ repository = "https://github.com/iteralabs/atelier"
 
 [lib]
 name = "atelier"
-crate-type = ["cdylib"]
 path = "rust/lib.rs"
+crate-type = ["cdylib"]
 
 [dependencies]
-pyo3 = "0.21.0"
+tch = { version = "0.16.0"}
+
+[dependencies.pyo3]
+version = "0.21.0"
+features = ["extension-module"]
 
 [profile.release-lto]
 inherits = "release"

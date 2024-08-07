@@ -1,6 +1,5 @@
 // lib.rs : Final script where to place wrapped functionality
-crate::atelier::trackers::parameter
-
+pub mod data_types;
 use pyo3::prelude::*;
 
 /// Formats the sum of two numbers as string.
@@ -15,4 +14,3 @@ fn atelier(_py: Python<'_>, m: &PyModule) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(sum_as_string, m)?)?;
     Ok(())
 }
-

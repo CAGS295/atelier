@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "atelier"
-version = "0.0.2"
+version = "0.0.3"
 
 [tool.setuptools.packages]
 # Python packages/modules
@@ -13,7 +13,7 @@ find = { where = ["python"]}
 
 [[tool.setuptools-rust.ext-modules]]
 # private rust extension module to be packaged into the python package
-target = ""
+target = "atelier"
 path = "Cargo.toml"
 binding = "PyO3"
 
