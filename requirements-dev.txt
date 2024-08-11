@@ -1,8 +1,5 @@
-# -- placeholder
 
 numpy
 attrs
-torch
-torchmetrics
 toml
 

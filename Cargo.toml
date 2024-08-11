@@ -13,7 +13,7 @@ path = "rust/lib.rs"
 crate-type = ["cdylib"]
 
 [dependencies]
-tch = { version = "0.16.0"}
+log = "0.4"
 
 [dependencies.pyo3]
 version = "0.21.0"
@@ -22,4 +22,3 @@ features = ["extension-module"]
 [profile.release-lto]
 inherits = "release"
 lto = true
-
