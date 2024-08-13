@@ -3,13 +3,14 @@ requires = ["setuptools", "setuptools-rust"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "atelier"
-version = "0.0.3"
+name = "rs_atelier"
+version = "0.0.4"
 
 [tool.setuptools.packages]
 find = { where = ["python"]}
 
 [[tool.setuptools-rust.ext-modules]]
-target = "atelier"
+target = "rs_atelier"
+
 path = "Cargo.toml"
 binding = "PyO3"

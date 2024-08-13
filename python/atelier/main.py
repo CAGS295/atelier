@@ -1,6 +1,6 @@
 
-# --- ------------------------------------------------------------------- --- #
+import atelier as atelier
 
-import atelier
-print(atelier.sum_as_string(1,2))
+py_ob = atelier.atelier.fill_orderbook_py()
+print(py_ob)
 
