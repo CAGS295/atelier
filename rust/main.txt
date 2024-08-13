@@ -1,0 +1,17 @@
+
+use std::time::{Duration, SystemTime};
+use crate::{Orderbook, Bids, Asks};
+
+fn main() {
+    
+    let now = SystemTime::now();
+    let ob = Orderbook {
+        orderbookid : 1234,
+        symbol : String::from("BTCUSDT"),
+        timestamp : now,
+        bids : Bids {prices: 1.2, volumes: 2.1},
+        asks : Asks {prices: 1.2, volumes: 2.1},
+    };
+
+    println!(ob.tob)
+}

@@ -1,14 +1,49 @@
+pub mod data;
+pub mod simulation;
 
-pub mod data_types;
+use crate::data::data_types::{Orderbook, Level, Order, Bids, Asks};
+use crate::simulation::randomizer::randomize_order;
 
-fn main (){
-    let ob = data_types::Orderbook {         
-        orderbookid: 1234,
+use std::collections::VecDeque;
+
+fn main() {
+    
+    let mut ob = Orderbook {
+        id: 1234,
+        ts: 1234.1234,
         symbol: String::from("BTCUSDT"),
-        timestamp: 1234,
-        bids: data_types::Bids {prices: vec![123.1], volumes: vec![321.1]},
-        asks: data_types::Asks {prices: vec![321.1], volumes: vec![123.1]},
+        bids: Bids { levels: Vec::new() },
+        asks: Asks { levels: Vec::new() },
     };
 
-    println!("Midprice is: {}", ob.midprice());
+    for _ in 0..10 {
+        
+        let (ts, price, amount, is_buy) = randomize_order();
+        
+        let order = Order {
+            id: 123,
+            ts,
+            price,
+            amount,
+            is_buy,};
+
+        if is_buy {
+            ob.bids.levels.push(
+                Level { 
+                    id: 123,
+                    price,
+                    orders: VecDeque::from_iter(vec![order]).into(),
+                }
+            );
+        } else {
+            ob.asks.levels.push(
+                Level {
+                    id: 123,
+                    price,
+                    orders: VecDeque::from_iter(vec![order]).into(),
+                }
+            );
+        }
+    }
+ 
 }
