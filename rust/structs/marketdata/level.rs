@@ -10,5 +10,14 @@ pub struct Level {
 
 impl Level {
 
+   pub fn new(level_id:u32, side:bool, price:f64, orders:Vec<Order>) -> Self {
+    Level {
+            level_id,
+            side,
+            price,
+            orders,
+        }
+    } 
+
 }
 

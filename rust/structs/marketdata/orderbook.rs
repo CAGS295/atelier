@@ -10,5 +10,13 @@ pub struct Orderbook{
 }
 
 impl Orderbook{
-
+    pub fn new(orderbook_id: u32, orderbook_ts: f64, symbol: String, bids: Vec<Level>, asks: Vec<Level>) -> Self {
+        Orderbook {
+            orderbook_id,
+            orderbook_ts,
+            symbol,
+            bids,
+            asks,
+        }
+    }
 }

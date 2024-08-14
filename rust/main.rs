@@ -1,12 +1,16 @@
-pub mod simulation;
 pub mod structs;
-use crate::structs::marketdata::order::Order;
-use crate::simulation::randomizer::randomize_order;
+pub mod simulation;
+use crate::simulation::randomizer;
 
 fn main() {
-    println!("main.rs empty");
-    let i_order = randomize_order();
+    
+    // generating Order
+    let i_order = randomizer::randomize_order();
     println!("{:?}", i_order);
+
+    // Placeholder for generating Levels<Order>
+    
+    // Placeholder for generating Orderbook<Level>
 
 }
 

@@ -1,7 +1,7 @@
 
 use rand::Rng;
 use::std::time::{Instant, Duration};
-use crate::Order;
+use crate::structs::marketdata::order::Order;
 
 // Create a random Order according to the provided parameters
 // it uses structs::marketdata::order::Order 
