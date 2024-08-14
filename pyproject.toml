@@ -1,19 +1,16 @@
-# pyproject.toml
 [build-system]
 requires = ["setuptools", "setuptools-rust"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "atelier"
-version = "0.0.3"
+name = "rs_atelier"
+version = "0.0.4"
 
 [tool.setuptools.packages]
-# Python packages/modules
 find = { where = ["python"]}
 
 [[tool.setuptools-rust.ext-modules]]
-# private rust extension module to be packaged into the python package
-target = "atelier"
+target = "rs_atelier"
+
 path = "Cargo.toml"
 binding = "PyO3"
-
