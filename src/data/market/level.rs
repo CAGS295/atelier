@@ -1,4 +1,4 @@
-use crate::structs::marketdata::order::Order;
+use crate::data::market::order::Order;
 
 #[derive(Debug)]
 pub struct Level {

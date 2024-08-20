@@ -1,4 +1,4 @@
-use crate::structs::marketdata::order::Order;
+use crate::data::market::order::Order;
 use rand::distributions::Uniform;
 use rand::Rng;
 use std::time::{SystemTime, UNIX_EPOCH};

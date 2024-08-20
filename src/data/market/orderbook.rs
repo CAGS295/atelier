@@ -1,6 +1,7 @@
 use crate::{
-    simulation::randomizer::randomize_order, structs::marketdata::level::Level,
-    structs::marketdata::order::Order,
+    data::market::level::Level, 
+    data::market::order::Order, 
+    simulation::randomizer::randomize_order,
 };
 
 #[derive(Debug)]

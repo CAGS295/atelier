@@ -2,28 +2,24 @@
 name = "atelier"
 version = "0.0.4"
 edition = "2021"
-description = "A cognitive workshop for synthetic artificial intelligence"
+description = "Computational Workshop and framework for Market microstructure replay and simulation"
 authors = ["IteraLabs.ai <contact@iteralabs.ai>"]
 license = "Apache-2.0"
 repository = "https://github.com/iteralabs/atelier"
+keywords = ["machine-learning", "framework", "math", "crypto"]
+categories = ["data-structures", "development-tools", "finance", "simulation"]
 
 [dependencies]
 rand = "0.8.5"
 serde = { version = "1.0.203", features = ["derive"] }
+criterion = "0.5.0"  # for benchmarking
 
-[dependencies.pyo3]
-version = "0.22.2"
-features = ["extension-module"]
-
-[[bin]]
-name = "rs_atelier"
-path = "rust/main.rs"
+[dev-dependencies]
+rustfmt = "0.10.0"    # for code formatting
 
 [lib]
-name = "rs_atelier"
-path = "rust/lib.rs"
-crate-type = ["cdylib"]
+name = "atelier"
+crate-type = ["lib"]
+test = true
+doctest = true
 
-[profile.release-lto]
-inherits = "release"
-lto = true
