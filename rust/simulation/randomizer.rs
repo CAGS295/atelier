@@ -1,29 +1,34 @@
-
-use rand::Rng;
-use::std::time::{Instant, Duration};
 use crate::structs::marketdata::order::Order;
+use rand::distributions::Uniform;
+use rand::Rng;
+use std::time::{SystemTime, UNIX_EPOCH};
 
 // Create a random Order according to the provided parameters
-// it uses structs::marketdata::order::Order 
+// it uses structs::marketdata::order::Order
 
-pub fn randomize_order() -> Order {
-    
+pub fn randomize_order(side: String, price: f64) -> Order {
     let mut uni_rand = rand::thread_rng();
-    
+
     // Randomize order_ts
-    let now_ts: f64 = Instant::now().elapsed().as_millis() as f64;
-    let ms_offset: Duration  = Duration::from_millis(uni_rand.gen::<u64>() as u64);
-    let order_ts: f64 = now_ts + (ms_offset.as_millis() as f64) / 1e9;
+    let now_ts = SystemTime::now();
+    // println!("now_ts: {:?}", now_ts);
 
-    // Randomize price
-    let price = (uni_rand.gen::<f64>() * 10.0) + 1.0;
-    
+    let since_epoch_ts = now_ts
+        .duration_since(UNIX_EPOCH)
+        .expect("Time went backwards")
+        .as_millis();
+    // println!("since_epoch_ts: {:?}", since_epoch_ts);
+
+    // Random millis between orders ~Uniform(1,30)
+    let ms_offset = uni_rand.sample(Uniform::new(1, 30));
+    // println!("ms_offset: {:?}", ms_offset);
+
+    let order_ts = since_epoch_ts as u64 + ms_offset;
+    // println!("order_ts: {}", order_ts);
+
     // Randomize amount
-    let amount = (uni_rand.gen::<f64>() * 100.0) + 1.0;
+    let amount = uni_rand.sample(Uniform::new(0.01, 10.0));
 
-    // Randomize side
-    let side = if uni_rand.gen::<f64>() < 0.5 { true } else { false };
-    
     // Randomize order_id
     let order_id: u32 = 123;
 
@@ -32,8 +37,6 @@ pub fn randomize_order() -> Order {
         order_ts,
         side,
         price,
-        amount
+        amount,
     }
-
 }
-
