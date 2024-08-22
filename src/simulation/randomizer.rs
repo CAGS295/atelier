@@ -3,7 +3,7 @@ use rand::distributions::Uniform;
 use rand::Rng;
 use std::time::{SystemTime, UNIX_EPOCH};
 
-// Create a random Order according to the provided parameters
+// Create a random Order according to the provided parameters
 // it uses structs::marketdata::order::Order
 
 pub fn randomize_order(side: Side, price: f64, order_type: OrderType) -> Order {
@@ -44,3 +44,11 @@ pub fn randomize_order(side: Side, price: f64, order_type: OrderType) -> Order {
         amount,
     }
 }
+
+pub fn gbm_return(s0: f64, mu: f64, sigma: f64, dwt: f64, t:f64) -> f64 {
+    let drift = mu * s0 * t;
+    let diffusion = sigma * s0 * dwt;
+    let dst = drift + diffusion;
+    dst
+}
+

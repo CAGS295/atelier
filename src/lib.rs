@@ -18,6 +18,8 @@
 //!        tick_size, n_levels, n_orders);
 //! ```
 
+#![allow(dead_code)]
+
 /// Definition of data structures and core datatypes
 pub mod data;
 
