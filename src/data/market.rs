@@ -1,6 +1,6 @@
 use crate::simulation::randomizer::randomize_order;
 
-#[derive(Debug, Copy, Clone)]
+#[derive(Debug, Copy, Clone, PartialEq)]
 pub enum Side {
     Bids,
     Asks,
@@ -8,13 +8,13 @@ pub enum Side {
 
 // ------------------------------------------------------------------------- //
 
-#[derive(Debug, Copy, Clone)]
+#[derive(Debug, Copy, Clone, PartialEq)]
 pub enum OrderType {
     Market,
     Limit,
 }
 
-#[derive(Debug, Copy, Clone)]
+#[derive(Debug, Copy, Clone, PartialEq)]
 pub struct Order {
     pub order_id: u32,
     pub order_ts: u64,
