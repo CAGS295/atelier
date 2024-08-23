@@ -104,7 +104,7 @@ impl Level {
 #[derive(Debug)]
 pub struct Orderbook {
     pub orderbook_id: u32,
-    pub orderbook_ts: f64,
+    pub orderbook_ts: u64,
     pub symbol: String,
     pub bids: Vec<Level>,
     pub asks: Vec<Level>,
@@ -114,7 +114,7 @@ impl Orderbook {
     // Create a new abstraction of Orderbook
     pub fn new(
         orderbook_id: u32,
-        orderbook_ts: f64,
+        orderbook_ts: u64,
         symbol: String,
         bids: Vec<Level>,
         asks: Vec<Level>,
@@ -175,7 +175,7 @@ impl Orderbook {
 
         Orderbook {
             orderbook_id: 123,
-            orderbook_ts: 321.0,
+            orderbook_ts: 321,
             symbol: String::from("BTCUSDT"),
             bids: i_bids,
             asks: i_asks,
