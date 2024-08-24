@@ -25,3 +25,5 @@ python/lucien.egg-info
 __pycache__
 
 **venv
+
+justfile
