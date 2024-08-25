@@ -1,15 +1,13 @@
-use atelier::data::market::orderbook::Orderbook;
+use atelier::data::market::Orderbook;
 
-fn main(){
+fn main() {
     let bid_price = 50_000.00;
     let ask_price = 50_100.00;
     let tick_size = 100.0;
     let n_levels = 200;
     let n_orders = 300;
 
-    let i_ob = Orderbook::synthetize(bid_price, 
-        ask_price, tick_size, 
-        n_levels, n_orders);
+    let i_ob = Orderbook::synthetize(bid_price, ask_price, tick_size, n_levels, n_orders);
 
     println!("\nlevel_id {:?}", i_ob.bids[199].level_id);
     println!("side {:?}", i_ob.bids[199].side);
