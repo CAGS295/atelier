@@ -1,0 +1,39 @@
+on: 
+  push
+
+name: 
+  Rust
+
+env: 
+  CARGO_TERM_COLOR: always
+  RUSTFLAGS: -D warnings
+
+jobs:
+
+  code_format:
+    runs-on: ubuntu-latest
+    name: Rust code formatting
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt
+      - uses: mbrobbel/rustfmt-check@master
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+  build_and_test:
+    runs-on: ubuntu-latest
+    name: Rust project build
+    strategy:
+      matrix:
+        toolchain:
+          - stable
+          - nightly
+    steps:
+      - uses: actions/checkout@v4
+      - uses: Swatinem/rust-cache@v2
+      - run: rustup update ${{ matrix.toolchain }} && rustup default ${{ matrix.toolchain }}
+      - run: cargo check 
+      - run: cargo build --verbose
+      - run: cargo test --verbose
