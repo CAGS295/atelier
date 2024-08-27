@@ -1,15 +1,6 @@
-name: Rust
-permissions:
-  pull-requests: read
-  statuses: write
-on:
-  pull_request:
-    types:
-      - opened
-      - edited
-env: 
-  CARGO_TERM_COLOR: always
-  RUSTFLAGS: -D warnings
+on: push
+
+name: Rustfmt
 
 jobs:
   format:
