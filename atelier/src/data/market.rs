@@ -74,7 +74,12 @@ pub struct Level {
 }
 
 impl Level {
-    pub fn new(level_id: u32, side: Side, price: f64, orders: Vec<Order>) -> Self {
+    pub fn new(
+        level_id: u32,
+        side: Side,
+        price: f64,
+        orders: Vec<Order>,
+    ) -> Self {
         match side {
             Side::Bids => Level {
                 level_id,
