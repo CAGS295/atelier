@@ -23,4 +23,5 @@ python/lucien.egg-info
 *.so
 .DS_Store
 __pycache__
+**venv
 
